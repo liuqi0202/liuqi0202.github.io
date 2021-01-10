@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
-    <title>DAQIGIT</title>
-    <updated>2021-01-10T07:26:35.513Z</updated>
+    <title>DaQi-git</title>
+    <updated>2021-01-10T08:03:00.530Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
     <subtitle>I may be slow to respond.</subtitle>
     <logo>https://liuqi0202.github.io/images/avatar.png</logo>
     <icon>https://liuqi0202.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2021, DAQIGIT</rights>
+    <rights>All rights reserved 2021, DaQi-git</rights>
     <entry>
         <title type="html"><![CDATA[Hello Gridea]]></title>
         <id>https://liuqi0202.github.io/post/hello-gridea/</id>
