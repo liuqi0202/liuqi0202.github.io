@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-11T09:46:06.917Z</updated>
+    <updated>2021-01-11T10:43:59.635Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -10,6 +10,28 @@
     <logo>https://liuqi0202.github.io/images/avatar.png</logo>
     <icon>https://liuqi0202.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, DaQi-git</rights>
+    <entry>
+        <title type="html"><![CDATA[Manjaro修改中文目录为英文目录]]></title>
+        <id>https://liuqi0202.github.io/post/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/</id>
+        <link href="https://liuqi0202.github.io/post/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/">
+        </link>
+        <updated>2021-01-11T10:41:47.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="参考">参考</h3>
+<p>https://segmentfault.com/a/1190000037454534</p>
+<p>https://blog.csdn.net/no_o_ac/article/details/103939779</p>
+<p>终端：</p>
+<pre><code class="language-shell">vim .config/user-dirs.dirs
+</code></pre>
+<p>参考以上百度搜来的办法，然后干脆全手工在Dolphin里改。</p>
+<h3 id="1-先删掉中文的目录">1、先删掉中文的目录</h3>
+<figure data-type="image" tabindex="1"><img src="G:/mynote/assets/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/clip_image002.jpg" alt="2021-01-11_12-31" loading="lazy"></figure>
+<h3 id="2-在用户目录里新建">2、在用户目录里新建</h3>
+<figure data-type="image" tabindex="2"><img src="G:/mynote/assets/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/clip_image004.jpg" alt="2021-01-11_12-33" loading="lazy"></figure>
+<h3 id="3-修改目录映射">3、修改目录映射</h3>
+<figure data-type="image" tabindex="3"><img src="G:/mynote/assets/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/clip_image006.jpg" alt="img" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="G:/mynote/assets/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/clip_image008.jpg" alt="img" loading="lazy"></figure>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Manjaro安装配置wps-office]]></title>
         <id>https://liuqi0202.github.io/post/manjaro-an-zhuang-pei-zhi-wps-office/</id>
