@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>DaQi-git</title>
+<title>Manjaro安装配置wps-office | DaQi-git</title>
 
 <link rel="shortcut icon" href="https://liuqi0202.github.io/favicon.ico?v=1610358255148">
 
@@ -25,11 +25,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,60 +85,74 @@
     </div>
 </nav>
 
-
-        <div class="post-list-container">
-    <div class="post-inner">
-        
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://liuqi0202.github.io/post/manjaro-an-zhuang-pei-zhi-wps-office/">
-                            <span class="post-title gt-c-content-color-first">Manjaro安装配置wps-office</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2021-01-11 ·
-                        </time>
-                        
-                    </div>
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Manjaro安装配置wps-office
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-01-11 ·
+                    </time>
+                    
                 </div>
-                
+                <div class="post-content">
+                    <h3 id="从aur进行安装用yay安装即可">从AUR进行安装，用yay安装即可</h3>
+<pre><code class="language-shell">yay -S wps-office
+</code></pre>
+<p>pacman已经没有wps了，因此用上面命令安装会报错。</p>
+<pre><code class="language-shell">sudo pacman -S wps-office
+</code></pre>
+<p>缺少字体报错，安装</p>
+<pre><code class="language-shell">yay -S ttf-wps-fonts
+</code></pre>
+<h3 id="更改中文版">更改中文版</h3>
+<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610358176107.jpg" alt="" loading="lazy"></figure>
+<p>下载wps中文语言包</p>
+<pre><code class="language-shell">sudo pacman -S wps-office-mui-zh-cn
+</code></pre>
+<p>安装中文语言包</p>
+<h3 id="安装后发现wps打开文档还是没有宋体字等常用字体">安装后发现wps打开文档还是没有宋体字等常用字体</h3>
+<p>通过搜索找到arch的wiki，里面啥都有，有问题优先去这里找答案吧。</p>
+<p>https://wiki.archlinux.org/index.php/Microsoft_fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</p>
+<p>从Windows使用字体<br>
+如果有一个安装了Windows的分区, 可以通过链接它们来使用其字体。</p>
+<p>例如, Windows的C:\盘被挂载在/windows:</p>
+<pre><code class="language-shell">ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts
+</code></pre>
+<p>然后重新生成字体缓存：</p>
+<pre><code class="language-shell">fc-cache -f
+</code></pre>
+<p>或者,将Windows的字体复制到/usr/share/fonts:</p>
+<pre><code class="language-shell">mkdir /usr/share/fonts/WindowsFonts
+
+cp /windows/Windows/Fonts/* /usr/share/fonts/WindowsFonts
+
+chmod 755 /usr/share/fonts/WindowsFonts/*
+</code></pre>
+<p>然后重新生成字体缓存：</p>
+<pre><code class="language-shell">fc-cache -f 
+</code></pre>
+
+                </div>
+            </article>
+        </div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://liuqi0202.github.io/post/ce-shi/" class="post-title gt-a-link">
+                    测试
+                </a>
             </div>
         
-            <div class="post gt-bg-theme-color-second">
-                <div class="post-left">
-                    <div>
-                        
-                        <a href="https://liuqi0202.github.io/post/ce-shi/">
-                            <span class="post-title gt-c-content-color-first">测试</span>
-                        </a>
-                    </div>
-                    <div class="gt-post-content post-abstract gt-c-content-color-second">
-                        
-                    </div>
-                    <div class="post-info">
-                        <time class="post-time gt-c-content-color-first">
-                            发布于 · 2021-01-10 ·
-                        </time>
-                        
-                    </div>
-                </div>
-                
-            </div>
+
         
-    </div>
-</div>
 
-        <div class="pagination-container">
-    
-    
-</div>
+        
 
+        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">I may be slow.</div>
