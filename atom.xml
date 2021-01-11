@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-11T11:12:54.326Z</updated>
+    <updated>2021-01-11T11:21:02.246Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -10,6 +10,60 @@
     <logo>https://liuqi0202.github.io/images/avatar.png</logo>
     <icon>https://liuqi0202.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, DaQi-git</rights>
+    <entry>
+        <title type="html"><![CDATA[Manjaro配置flameshot全局快捷键的方法及解决截图无法保存报错]]></title>
+        <id>https://liuqi0202.github.io/post/manjaro-pei-zhi-flameshot-quan-ju-kuai-jie-jian-de-fang-fa-ji-jie-jue-jie-tu-wu-fa-bao-cun-bao-cuo/</id>
+        <link href="https://liuqi0202.github.io/post/manjaro-pei-zhi-flameshot-quan-ju-kuai-jie-jian-de-fang-fa-ji-jie-jue-jie-tu-wu-fa-bao-cun-bao-cuo/">
+        </link>
+        <updated>2021-01-11T11:15:30.000Z</updated>
+        <content type="html"><![CDATA[<p>参考：</p>
+<p>https://www.djc8.cn/archives/manjaro-uses-flashshot-as-a-screenshot-tool.html</p>
+<p>并进行了一点更改。</p>
+<p>先到github上找一下flameshot-shortcuts-kde下载到桌面</p>
+<p>1、在桌面上新建一个文本文件</p>
+<p>2、到下面网页里复制相关代码</p>
+<p>https://github.com/flameshot-org/flameshot/blob/master/docs/shortcuts-config/flameshot-shortcuts-kde</p>
+<p>3、自行复制代码,并保存文件，命名flameshot-shortcuts-kde</p>
+<p>4、然后进入设置页面选择快捷键-&gt;自定义快捷键-&gt;在KMenuEdit树节点上选中，在Edit下拉框中选择Import.</p>
+<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610363847751.jpg" alt="" loading="lazy"></figure>
+<p>5、我这里已经是全局printSc可以直接用了。</p>
+<figure data-type="image" tabindex="2"><img src="https://liuqi0202.github.io/post-images/1610363892898.jpg" alt="" loading="lazy"></figure>
+<p>没有条件</p>
+<figure data-type="image" tabindex="3"><img src="https://liuqi0202.github.io/post-images/1610363933710.jpg" alt="" loading="lazy"></figure>
+<p>take screenshot 的触发器 和 动作</p>
+<figure data-type="image" tabindex="4"><img src="https://liuqi0202.github.io/post-images/1610363940426.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://liuqi0202.github.io/post-images/1610363947960.jpg" alt="" loading="lazy"></figure>
+<p>take screenshot with delay的触发器 和 动作</p>
+<figure data-type="image" tabindex="6"><img src="https://liuqi0202.github.io/post-images/1610363955016.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://liuqi0202.github.io/post-images/1610363961063.jpg" alt="" loading="lazy"></figure>
+<p>take full-screen screenshot and save的触发器 和 动作</p>
+<figure data-type="image" tabindex="8"><img src="https://liuqi0202.github.io/post-images/1610363971153.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://liuqi0202.github.io/post-images/1610363980069.jpg" alt="" loading="lazy"></figure>
+<p>take full-screen screenshot and sopy it to clipboard的触发器 和 动作</p>
+<figure data-type="image" tabindex="10"><img src="https://liuqi0202.github.io/post-images/1610363991666.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://liuqi0202.github.io/post-images/1610363998282.jpg" alt="" loading="lazy"></figure>
+<h3 id="现在直接按prtscn就可以截图了对于要截取按alt按键会弹出菜单的截取效果非常好太爽了">现在直接按PrtScn就可以截图了，对于要截取按Alt+按键会弹出菜单的截取效果非常好，太爽了！</h3>
+<h1 id="flameshot截图保存报错">flameshot截图保存报错</h1>
+<figure data-type="image" tabindex="12"><img src="https://liuqi0202.github.io/post-images/1610364014620.jpg" alt="" loading="lazy"></figure>
+<p>根据提示到用户目录依次建立Pictures文件夹Screenshots文件夹</p>
+<p>/home/user/Pictures/Screenshots/</p>
+]]></content>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Manjaro KDE 选择plasma风格后桌面特效消失]]></title>
+        <id>https://liuqi0202.github.io/post/manjaro-kde-xuan-ze-plasma-feng-ge-hou-zhuo-mian-te-xiao-xiao-shi/</id>
+        <link href="https://liuqi0202.github.io/post/manjaro-kde-xuan-ze-plasma-feng-ge-hou-zhuo-mian-te-xiao-xiao-shi/">
+        </link>
+        <updated>2021-01-11T11:14:50.000Z</updated>
+        <content type="html"><![CDATA[<p>解决这个问题参考了</p>
+<p>plasma桌面特效无效的解决办法</p>
+<p>https://blog.csdn.net/u011054333/article/details/53653506</p>
+<p>KDE桌面无故特效消失和图标黑底</p>
+<p>https://www.cnblogs.com/weilinfox/p/13431272.html</p>
+<p>这个问题是桌面特效混成器的设置改变引起的。打开“系统设置-&gt;硬件-&gt;显示和监控-&gt;混成器”，可以发现有问题的桌面将“渲染后端”设置为了“OpenGL 2.0”，我们只需要把它设置为“OpenGL 3.1”即可解决该问题。</p>
+<p>另外，也因为桌面配置文件出现问题，默认的桌面是中文桌面两个字，改为微风风格后桌面指向的文件夹为Desktop，文件管理器里找一下，桌面文件都在。</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Manjaro 音频配置（耳机孔被插死，无法拔出）]]></title>
         <id>https://liuqi0202.github.io/post/manjaro-yin-pin-pei-zhi-er-ji-kong-bei-cha-si-wu-fa-ba-chu/</id>

@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>DaQi-git</title>
+<title>Manjaro KDE 选择plasma风格后桌面特效消失 | DaQi-git</title>
 
 <link rel="shortcut icon" href="https://liuqi0202.github.io/favicon.ico?v=1610364058417">
 
@@ -25,11 +25,11 @@
 
 
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <div class="main-content">
-        <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,19 +85,50 @@
     </div>
 </nav>
 
-        <div class="post-container">
-            <div class="post-detail gt-bg-theme-color-first">
-                <article class="gt-post-content">
-                    <h2 class="post-title">标签</h2>
-        <div class="tags-container">
-            
-                <a class="tag gt-c-content-color-first gt-a-link"
-                   href="https://liuqi0202.github.io/tag/WMGpKYJPO/">#Manjaro</a>
-            
+    <div class="post-container">
+        <div class="post-detail gt-bg-theme-color-second">
+            <article class="gt-post-content">
+                <h2 class="post-title">
+                    Manjaro KDE 选择plasma风格后桌面特效消失
+                </h2>
+                <div class="post-info">
+                    <time class="post-time gt-c-content-color-first">
+                        · 2021-01-11 ·
+                    </time>
+                    
+                        <a href="https://liuqi0202.github.io/tag/WMGpKYJPO/" class="post-tags">
+                            # Manjaro
+                        </a>
+                    
+                </div>
+                <div class="post-content">
+                    <p>解决这个问题参考了</p>
+<p>plasma桌面特效无效的解决办法</p>
+<p>https://blog.csdn.net/u011054333/article/details/53653506</p>
+<p>KDE桌面无故特效消失和图标黑底</p>
+<p>https://www.cnblogs.com/weilinfox/p/13431272.html</p>
+<p>这个问题是桌面特效混成器的设置改变引起的。打开“系统设置-&gt;硬件-&gt;显示和监控-&gt;混成器”，可以发现有问题的桌面将“渲染后端”设置为了“OpenGL 2.0”，我们只需要把它设置为“OpenGL 3.1”即可解决该问题。</p>
+<p>另外，也因为桌面配置文件出现问题，默认的桌面是中文桌面两个字，改为微风风格后桌面指向的文件夹为Desktop，文件管理器里找一下，桌面文件都在。</p>
+
+                </div>
+            </article>
         </div>
-    </article>
-</div>
-</div>
+
+        
+            <div class="next-post">
+                <div class="next gt-c-content-color-first">下一篇</div>
+                <a href="https://liuqi0202.github.io/post/manjaro-yin-pin-pei-zhi-er-ji-kong-bei-cha-si-wu-fa-ba-chu/" class="post-title gt-a-link">
+                    Manjaro 音频配置（耳机孔被插死，无法拔出）
+                </a>
+            </div>
+        
+
+        
+
+        
+
+        
+
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">I may be slow.</div>
     <div class="social-container">

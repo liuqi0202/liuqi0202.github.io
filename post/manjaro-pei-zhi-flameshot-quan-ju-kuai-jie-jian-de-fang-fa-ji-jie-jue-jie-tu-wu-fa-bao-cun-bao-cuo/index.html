@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Manjaro安装配置wps-office | DaQi-git</title>
+<title>Manjaro配置flameshot全局快捷键的方法及解决截图无法保存报错 | DaQi-git</title>
 
 <link rel="shortcut icon" href="https://liuqi0202.github.io/favicon.ico?v=1610364058417">
 
@@ -89,7 +89,7 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Manjaro安装配置wps-office
+                    Manjaro配置flameshot全局快捷键的方法及解决截图无法保存报错
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
@@ -102,42 +102,37 @@
                     
                 </div>
                 <div class="post-content">
-                    <h3 id="从aur进行安装用yay安装即可">从AUR进行安装，用yay安装即可</h3>
-<pre><code class="language-shell">yay -S wps-office
-</code></pre>
-<p>pacman已经没有wps了，因此用上面命令安装会报错。</p>
-<pre><code class="language-shell">sudo pacman -S wps-office
-</code></pre>
-<p>缺少字体报错，安装</p>
-<pre><code class="language-shell">yay -S ttf-wps-fonts
-</code></pre>
-<h3 id="更改中文版">更改中文版</h3>
-<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610358176107.jpg" alt="" loading="lazy"></figure>
-<p>下载wps中文语言包</p>
-<pre><code class="language-shell">sudo pacman -S wps-office-mui-zh-cn
-</code></pre>
-<p>安装中文语言包</p>
-<h3 id="安装后发现wps打开文档还是没有宋体字等常用字体">安装后发现wps打开文档还是没有宋体字等常用字体</h3>
-<p>通过搜索找到arch的wiki，里面啥都有，有问题优先去这里找答案吧。</p>
-<p>https://wiki.archlinux.org/index.php/Microsoft_fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</p>
-<p>从Windows使用字体<br>
-如果有一个安装了Windows的分区, 可以通过链接它们来使用其字体。</p>
-<p>例如, Windows的C:\盘被挂载在/windows:</p>
-<pre><code class="language-shell">ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts
-</code></pre>
-<p>然后重新生成字体缓存：</p>
-<pre><code class="language-shell">fc-cache -f
-</code></pre>
-<p>或者,将Windows的字体复制到/usr/share/fonts:</p>
-<pre><code class="language-shell">mkdir /usr/share/fonts/WindowsFonts
-
-cp /windows/Windows/Fonts/* /usr/share/fonts/WindowsFonts
-
-chmod 755 /usr/share/fonts/WindowsFonts/*
-</code></pre>
-<p>然后重新生成字体缓存：</p>
-<pre><code class="language-shell">fc-cache -f 
-</code></pre>
+                    <p>参考：</p>
+<p>https://www.djc8.cn/archives/manjaro-uses-flashshot-as-a-screenshot-tool.html</p>
+<p>并进行了一点更改。</p>
+<p>先到github上找一下flameshot-shortcuts-kde下载到桌面</p>
+<p>1、在桌面上新建一个文本文件</p>
+<p>2、到下面网页里复制相关代码</p>
+<p>https://github.com/flameshot-org/flameshot/blob/master/docs/shortcuts-config/flameshot-shortcuts-kde</p>
+<p>3、自行复制代码,并保存文件，命名flameshot-shortcuts-kde</p>
+<p>4、然后进入设置页面选择快捷键-&gt;自定义快捷键-&gt;在KMenuEdit树节点上选中，在Edit下拉框中选择Import.</p>
+<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610363847751.jpg" alt="" loading="lazy"></figure>
+<p>5、我这里已经是全局printSc可以直接用了。</p>
+<figure data-type="image" tabindex="2"><img src="https://liuqi0202.github.io/post-images/1610363892898.jpg" alt="" loading="lazy"></figure>
+<p>没有条件</p>
+<figure data-type="image" tabindex="3"><img src="https://liuqi0202.github.io/post-images/1610363933710.jpg" alt="" loading="lazy"></figure>
+<p>take screenshot 的触发器 和 动作</p>
+<figure data-type="image" tabindex="4"><img src="https://liuqi0202.github.io/post-images/1610363940426.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="5"><img src="https://liuqi0202.github.io/post-images/1610363947960.jpg" alt="" loading="lazy"></figure>
+<p>take screenshot with delay的触发器 和 动作</p>
+<figure data-type="image" tabindex="6"><img src="https://liuqi0202.github.io/post-images/1610363955016.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="7"><img src="https://liuqi0202.github.io/post-images/1610363961063.jpg" alt="" loading="lazy"></figure>
+<p>take full-screen screenshot and save的触发器 和 动作</p>
+<figure data-type="image" tabindex="8"><img src="https://liuqi0202.github.io/post-images/1610363971153.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://liuqi0202.github.io/post-images/1610363980069.jpg" alt="" loading="lazy"></figure>
+<p>take full-screen screenshot and sopy it to clipboard的触发器 和 动作</p>
+<figure data-type="image" tabindex="10"><img src="https://liuqi0202.github.io/post-images/1610363991666.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="11"><img src="https://liuqi0202.github.io/post-images/1610363998282.jpg" alt="" loading="lazy"></figure>
+<h3 id="现在直接按prtscn就可以截图了对于要截取按alt按键会弹出菜单的截取效果非常好太爽了">现在直接按PrtScn就可以截图了，对于要截取按Alt+按键会弹出菜单的截取效果非常好，太爽了！</h3>
+<h1 id="flameshot截图保存报错">flameshot截图保存报错</h1>
+<figure data-type="image" tabindex="12"><img src="https://liuqi0202.github.io/post-images/1610364014620.jpg" alt="" loading="lazy"></figure>
+<p>根据提示到用户目录依次建立Pictures文件夹Screenshots文件夹</p>
+<p>/home/user/Pictures/Screenshots/</p>
 
                 </div>
             </article>
@@ -146,8 +141,8 @@ chmod 755 /usr/share/fonts/WindowsFonts/*
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://liuqi0202.github.io/post/ce-shi/" class="post-title gt-a-link">
-                    测试
+                <a href="https://liuqi0202.github.io/post/manjaro-kde-xuan-ze-plasma-feng-ge-hou-zhuo-mian-te-xiao-xiao-shi/" class="post-title gt-a-link">
+                    Manjaro KDE 选择plasma风格后桌面特效消失
                 </a>
             </div>
         
