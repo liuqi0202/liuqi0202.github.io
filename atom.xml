@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-11T10:48:02.513Z</updated>
+    <updated>2021-01-11T11:11:27.748Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -10,6 +10,65 @@
     <logo>https://liuqi0202.github.io/images/avatar.png</logo>
     <icon>https://liuqi0202.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, DaQi-git</rights>
+    <entry>
+        <title type="html"><![CDATA[Manjaro 音频配置（耳机孔被插死，无法拔出）]]></title>
+        <id>https://liuqi0202.github.io/post/manjaro-yin-pin-pei-zhi-er-ji-kong-bei-cha-si-wu-fa-ba-chu/</id>
+        <link href="https://liuqi0202.github.io/post/manjaro-yin-pin-pei-zhi-er-ji-kong-bei-cha-si-wu-fa-ba-chu/">
+        </link>
+        <updated>2021-01-11T10:50:08.000Z</updated>
+        <content type="html"><![CDATA[<p>解除所有音频输出设备为“不静音”状态</p>
+<pre><code class="language-shell">[a@a-L440 ~]$ amixer sset Master unmute 
+Simple mixer control 'Master',0 
+Capabilities: pvolume pswitch pswitch-joined 
+Playback channels: Front Left - Front Right 
+Limits: Playback 0 - 65536 
+Mono: 
+Front Left: Playback 65536 [100%] [on] 
+Front Right: Playback 65536 [100%] [on] 
+</code></pre>
+<p>调出alsmixer音频设备管理器，对每一路设备进行调试</p>
+<pre><code class="language-shell"> [a@a-L440 ~]$ alsamixer
+</code></pre>
+<p>master设为100</p>
+<p>headphone设为MM 禁用</p>
+<p>speaker设为100</p>
+<p>PCM 设为100</p>
+<p>MIC设为MM</p>
+<p>Auto-Mute Modes设为MM</p>
+<p>用命令：</p>
+<pre><code class="language-shell">[a@a-L440 ~]$ alsamixer auto-mute disabled
+</code></pre>
+<p>但是重启系统后<code>alsamixer</code> 声音设置好后，重启又重新变为启动自动静音，用root执行，以后就默认取消自动静音了</p>
+<pre><code class="language-shell">[a@a-L440 ~]$ sudo alsactl store
+</code></pre>
+<p>参考资料：</p>
+<p>https://superuser.com/questions/431079/how-to-disable-auto-mute-mode</p>
+<p>在执行sudo alsactl store 这命令以后,如果正常关机就可以保存alsamixer的音量,但是如果等执行了那条命令以后立即断电以后就保存不了,后来我测试了下,总结了这两个规律,一个是要等执行那条命令以后再等48秒然后断电就可以保存了,二个就是用vim /var/lib/alsa/asound.state到这个文件里面,然后不做任何修改直接wq保存,然后立即断电启动以后也可以保存.问下大家这个问题怎么解决,之前好象只要一执行保存命令就可以马上保存了.如果不按上面那两条规律做的话,有可能出现asound.state这文件在断电启动以后被删除,然后alsamixer里面master 和pcm的音量都为81.有可能出现文件是空的.然后alsamixer里面master=55 和pcm=74.<br>
+<img src="https://liuqi0202.github.io/post-images/1610363230104.jpg" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610363326100.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://liuqi0202.github.io/post-images/1610363359073.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://liuqi0202.github.io/post-images/1610363366869.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://liuqi0202.github.io/post-images/1610363380725.jpg" alt="" loading="lazy"></figure>
+<h3 id="结论这时候扬声器已经能够出声音了但是内置的麦克依然不能用">结论：这时候扬声器已经能够出声音了，但是内置的麦克依然不能用。</h3>
+<p>期间也尝试了一些命令来解决问题</p>
+<p>查看音频设备</p>
+<pre><code class="language-shell"> [a@a-L440 ~]$ aplay -l
+</code></pre>
+<p>测试音频</p>
+<pre><code class="language-shell"> [a@a-L440 ~]$ speaker-test
+</code></pre>
+<p>音频选项</p>
+<pre><code class="language-sh"> [a@a-L440 ~]$ alsamixer
+</code></pre>
+<p>结束启动服务</p>
+<pre><code class="language-shell">[a@a-L440 ~]$ pulseaudio -k
+[a@a-L440 ~]$ pulseaudio --start
+</code></pre>
+<p>参考资料：</p>
+<p>https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</p>
+<p>http://www.manongjc.com/article/59408.html</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Manjaro修改中文目录为英文目录]]></title>
         <id>https://liuqi0202.github.io/post/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/</id>

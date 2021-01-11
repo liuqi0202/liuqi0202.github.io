@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Manjaro安装配置wps-office | DaQi-git</title>
+<title>Manjaro 音频配置（耳机孔被插死，无法拔出） | DaQi-git</title>
 
 <link rel="shortcut icon" href="https://liuqi0202.github.io/favicon.ico?v=1610363472422">
 
@@ -89,7 +89,7 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Manjaro安装配置wps-office
+                    Manjaro 音频配置（耳机孔被插死，无法拔出）
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
@@ -98,42 +98,57 @@
                     
                 </div>
                 <div class="post-content">
-                    <h3 id="从aur进行安装用yay安装即可">从AUR进行安装，用yay安装即可</h3>
-<pre><code class="language-shell">yay -S wps-office
+                    <p>解除所有音频输出设备为“不静音”状态</p>
+<pre><code class="language-shell">[a@a-L440 ~]$ amixer sset Master unmute 
+Simple mixer control 'Master',0 
+Capabilities: pvolume pswitch pswitch-joined 
+Playback channels: Front Left - Front Right 
+Limits: Playback 0 - 65536 
+Mono: 
+Front Left: Playback 65536 [100%] [on] 
+Front Right: Playback 65536 [100%] [on] 
 </code></pre>
-<p>pacman已经没有wps了，因此用上面命令安装会报错。</p>
-<pre><code class="language-shell">sudo pacman -S wps-office
+<p>调出alsmixer音频设备管理器，对每一路设备进行调试</p>
+<pre><code class="language-shell"> [a@a-L440 ~]$ alsamixer
 </code></pre>
-<p>缺少字体报错，安装</p>
-<pre><code class="language-shell">yay -S ttf-wps-fonts
+<p>master设为100</p>
+<p>headphone设为MM 禁用</p>
+<p>speaker设为100</p>
+<p>PCM 设为100</p>
+<p>MIC设为MM</p>
+<p>Auto-Mute Modes设为MM</p>
+<p>用命令：</p>
+<pre><code class="language-shell">[a@a-L440 ~]$ alsamixer auto-mute disabled
 </code></pre>
-<h3 id="更改中文版">更改中文版</h3>
-<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610358176107.jpg" alt="" loading="lazy"></figure>
-<p>下载wps中文语言包</p>
-<pre><code class="language-shell">sudo pacman -S wps-office-mui-zh-cn
+<p>但是重启系统后<code>alsamixer</code> 声音设置好后，重启又重新变为启动自动静音，用root执行，以后就默认取消自动静音了</p>
+<pre><code class="language-shell">[a@a-L440 ~]$ sudo alsactl store
 </code></pre>
-<p>安装中文语言包</p>
-<h3 id="安装后发现wps打开文档还是没有宋体字等常用字体">安装后发现wps打开文档还是没有宋体字等常用字体</h3>
-<p>通过搜索找到arch的wiki，里面啥都有，有问题优先去这里找答案吧。</p>
-<p>https://wiki.archlinux.org/index.php/Microsoft_fonts_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</p>
-<p>从Windows使用字体<br>
-如果有一个安装了Windows的分区, 可以通过链接它们来使用其字体。</p>
-<p>例如, Windows的C:\盘被挂载在/windows:</p>
-<pre><code class="language-shell">ln -s /windows/Windows/Fonts /usr/share/fonts/WindowsFonts
+<p>参考资料：</p>
+<p>https://superuser.com/questions/431079/how-to-disable-auto-mute-mode</p>
+<p>在执行sudo alsactl store 这命令以后,如果正常关机就可以保存alsamixer的音量,但是如果等执行了那条命令以后立即断电以后就保存不了,后来我测试了下,总结了这两个规律,一个是要等执行那条命令以后再等48秒然后断电就可以保存了,二个就是用vim /var/lib/alsa/asound.state到这个文件里面,然后不做任何修改直接wq保存,然后立即断电启动以后也可以保存.问下大家这个问题怎么解决,之前好象只要一执行保存命令就可以马上保存了.如果不按上面那两条规律做的话,有可能出现asound.state这文件在断电启动以后被删除,然后alsamixer里面master 和pcm的音量都为81.有可能出现文件是空的.然后alsamixer里面master=55 和pcm=74.<br>
+<img src="https://liuqi0202.github.io/post-images/1610363230104.jpg" alt="" loading="lazy"></p>
+<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610363326100.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="2"><img src="https://liuqi0202.github.io/post-images/1610363359073.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="3"><img src="https://liuqi0202.github.io/post-images/1610363366869.jpg" alt="" loading="lazy"></figure>
+<figure data-type="image" tabindex="4"><img src="https://liuqi0202.github.io/post-images/1610363380725.jpg" alt="" loading="lazy"></figure>
+<h3 id="结论这时候扬声器已经能够出声音了但是内置的麦克依然不能用">结论：这时候扬声器已经能够出声音了，但是内置的麦克依然不能用。</h3>
+<p>期间也尝试了一些命令来解决问题</p>
+<p>查看音频设备</p>
+<pre><code class="language-shell"> [a@a-L440 ~]$ aplay -l
 </code></pre>
-<p>然后重新生成字体缓存：</p>
-<pre><code class="language-shell">fc-cache -f
+<p>测试音频</p>
+<pre><code class="language-shell"> [a@a-L440 ~]$ speaker-test
 </code></pre>
-<p>或者,将Windows的字体复制到/usr/share/fonts:</p>
-<pre><code class="language-shell">mkdir /usr/share/fonts/WindowsFonts
-
-cp /windows/Windows/Fonts/* /usr/share/fonts/WindowsFonts
-
-chmod 755 /usr/share/fonts/WindowsFonts/*
+<p>音频选项</p>
+<pre><code class="language-sh"> [a@a-L440 ~]$ alsamixer
 </code></pre>
-<p>然后重新生成字体缓存：</p>
-<pre><code class="language-shell">fc-cache -f 
+<p>结束启动服务</p>
+<pre><code class="language-shell">[a@a-L440 ~]$ pulseaudio -k
+[a@a-L440 ~]$ pulseaudio --start
 </code></pre>
+<p>参考资料：</p>
+<p>https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</p>
+<p>http://www.manongjc.com/article/59408.html</p>
 
                 </div>
             </article>
@@ -142,8 +157,8 @@ chmod 755 /usr/share/fonts/WindowsFonts/*
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://liuqi0202.github.io/post/ce-shi/" class="post-title gt-a-link">
-                    测试
+                <a href="https://liuqi0202.github.io/post/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/" class="post-title gt-a-link">
+                    Manjaro修改中文目录为英文目录
                 </a>
             </div>
         
