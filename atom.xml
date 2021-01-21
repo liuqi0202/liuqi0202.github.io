@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-21T15:29:51.375Z</updated>
+    <updated>2021-01-21T15:39:56.540Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -10,6 +10,53 @@
     <logo>https://liuqi0202.github.io/images/avatar.png</logo>
     <icon>https://liuqi0202.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, DaQi-git</rights>
+    <entry>
+        <title type="html"><![CDATA[ 静态网页支持Markdown和Mermaid]]></title>
+        <id>https://liuqi0202.github.io/post/jing-tai-wang-ye-zhi-chi-markdown-he-mermaid/</id>
+        <link href="https://liuqi0202.github.io/post/jing-tai-wang-ye-zhi-chi-markdown-he-mermaid/">
+        </link>
+        <updated>2021-01-21T15:39:03.000Z</updated>
+        <content type="html"><![CDATA[<p>试用了一些PC版笔记类软件能很好的支持Markdown和Mermaid，但是发布到HEML网页中Mermaid就无法显示了，手机端的App也支持不好Mermaid。<br>
+我很喜欢用Mermaid写流程图、甘特图，所以搜索了一些相关文章找到了答案。<br>
+效果：<br>
+[Work arrangements]: https://liuqi0202.github.io/post/ceshi/<br>
+首先要更改网站发布模板的代码：<br>
+将以下代码复制到发布模板中</body>的后面，script的加载执行会影响点速度。<br>
+我把第一句中的src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js版本改了一下，改成了8.8.4，能很好的解释mermaid语句。用手机浏览器观看效果也很好。</p>
+<pre><code class="language-html">        &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+            var config = {
+                startOnLoad:true,
+                flowchart:{
+                    useMaxWidth:false,
+                    htmlLabels:true
+                }
+            };
+            mermaid.initialize(config);
+            $(function(){
+                var elements = document.getElementsByClassName(&quot;language-mermaid&quot;);
+                for (var i = elements.length; i--;) {
+                    element = elements[i];
+                    var graphDefinition = element.innerText;
+                    if (graphDefinition) {
+                        var svg = mermaid.render('ha_mermaid_' + i, graphDefinition, function(svg){});
+                        if (svg) {
+                            var svgElement = document.createElement('div');
+                            preNode = element.parentNode;
+                            svgElement.innerHTML = svg;
+                            svgElement.setAttribute('class', 'mermaid');
+                            svgElement.setAttribute('data-processed', 'true');
+                            preNode.parentNode.replaceChild(svgElement, preNode);
+                        }
+                    }
+                }
+            });
+        &lt;/script&gt;
+</code></pre>
+<p>参考资料：<br>
+https://zhiqiwang.github.io/adding-mermaid-support-in-gridea/#how-to-use-mermaid</p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Work arrangements]]></title>
         <id>https://liuqi0202.github.io/post/ceshi/</id>

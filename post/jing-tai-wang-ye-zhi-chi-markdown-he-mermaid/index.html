@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Manjaro修改中文目录为英文目录 | DaQi-git</title>
+<title> 静态网页支持Markdown和Mermaid | DaQi-git</title>
 
 <link rel="shortcut icon" href="https://liuqi0202.github.io/favicon.ico?v=1611243593129">
 
@@ -89,33 +89,54 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Manjaro修改中文目录为英文目录
+                     静态网页支持Markdown和Mermaid
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2021-01-11 ·
+                        · 2021-01-21 ·
                     </time>
-                    
-                        <a href="https://liuqi0202.github.io/tag/WMGpKYJPO/" class="post-tags">
-                            # Manjaro
-                        </a>
                     
                 </div>
                 <div class="post-content">
-                    <h3 id="参考">参考</h3>
-<p>https://segmentfault.com/a/1190000037454534</p>
-<p>https://blog.csdn.net/no_o_ac/article/details/103939779</p>
-<p>终端：</p>
-<pre><code class="language-shell">vim .config/user-dirs.dirs
+                    <p>试用了一些PC版笔记类软件能很好的支持Markdown和Mermaid，但是发布到HEML网页中Mermaid就无法显示了，手机端的App也支持不好Mermaid。<br>
+我很喜欢用Mermaid写流程图、甘特图，所以搜索了一些相关文章找到了答案。<br>
+效果：<br>
+[Work arrangements]: https://liuqi0202.github.io/post/ceshi/<br>
+首先要更改网站发布模板的代码：<br>
+将以下代码复制到发布模板中</body>的后面，script的加载执行会影响点速度。<br>
+我把第一句中的src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js版本改了一下，改成了8.8.4，能很好的解释mermaid语句。用手机浏览器观看效果也很好。</p>
+<pre><code class="language-html">        &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js&quot;&gt;&lt;/script&gt;
+        &lt;script&gt;
+            var config = {
+                startOnLoad:true,
+                flowchart:{
+                    useMaxWidth:false,
+                    htmlLabels:true
+                }
+            };
+            mermaid.initialize(config);
+            $(function(){
+                var elements = document.getElementsByClassName(&quot;language-mermaid&quot;);
+                for (var i = elements.length; i--;) {
+                    element = elements[i];
+                    var graphDefinition = element.innerText;
+                    if (graphDefinition) {
+                        var svg = mermaid.render('ha_mermaid_' + i, graphDefinition, function(svg){});
+                        if (svg) {
+                            var svgElement = document.createElement('div');
+                            preNode = element.parentNode;
+                            svgElement.innerHTML = svg;
+                            svgElement.setAttribute('class', 'mermaid');
+                            svgElement.setAttribute('data-processed', 'true');
+                            preNode.parentNode.replaceChild(svgElement, preNode);
+                        }
+                    }
+                }
+            });
+        &lt;/script&gt;
 </code></pre>
-<p>参考以上百度搜来的办法，然后干脆全手工在Dolphin里改。</p>
-<h3 id="1-先删掉中文的目录">1、先删掉中文的目录</h3>
-<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610361996112.jpg" alt="" loading="lazy"></figure>
-<h3 id="2-在用户目录里新建">2、在用户目录里新建</h3>
-<figure data-type="image" tabindex="2"><img src="https://liuqi0202.github.io/post-images/1610362043076.jpg" alt="" loading="lazy"></figure>
-<h3 id="3-修改目录映射">3、修改目录映射</h3>
-<figure data-type="image" tabindex="3"><img src="https://liuqi0202.github.io/post-images/1610362057906.jpg" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="https://liuqi0202.github.io/post-images/1610362064184.jpg" alt="" loading="lazy"></figure>
+<p>参考资料：<br>
+https://zhiqiwang.github.io/adding-mermaid-support-in-gridea/#how-to-use-mermaid</p>
 
                 </div>
             </article>
@@ -124,8 +145,8 @@
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://liuqi0202.github.io/post/manjaro-an-zhuang-pei-zhi-wps-office/" class="post-title gt-a-link">
-                    Manjaro安装配置wps-office
+                <a href="https://liuqi0202.github.io/post/ceshi/" class="post-title gt-a-link">
+                    Work arrangements
                 </a>
             </div>
         
