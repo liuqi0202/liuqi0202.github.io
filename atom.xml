@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-21T14:12:59.759Z</updated>
+    <updated>2021-01-21T14:13:51.816Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -10,6 +10,29 @@
     <logo>https://liuqi0202.github.io/images/avatar.png</logo>
     <icon>https://liuqi0202.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, DaQi-git</rights>
+    <entry>
+        <title type="html"><![CDATA[ceshi]]></title>
+        <id>https://liuqi0202.github.io/post/ceshi/</id>
+        <link href="https://liuqi0202.github.io/post/ceshi/">
+        </link>
+        <updated>2021-01-21T13:08:01.000Z</updated>
+        <content type="html"><![CDATA[<div class="mermaid">
+```mermaid
+gantt
+dateformat YYYY-MM-DD
+title 近期安排
+section 常规20
+期末:done,2021-01-11,2d
+上交材料:crit,done,1d
+结业式:2021-01-15,1d
+section 统计
+第四季度统计:crit,2021-01-16,4d
+section 统计2
+2222:2021-01-25,1d
+```
+</div>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Manjaro配置flameshot全局快捷键的方法及解决截图无法保存报错]]></title>
         <id>https://liuqi0202.github.io/post/manjaro-pei-zhi-flameshot-quan-ju-kuai-jie-jian-de-fang-fa-ji-jie-jue-jie-tu-wu-fa-bao-cun-bao-cuo/</id>
