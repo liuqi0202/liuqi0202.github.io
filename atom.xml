@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-21T14:13:51.816Z</updated>
+    <updated>2021-01-21T14:17:59.655Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -17,19 +17,28 @@
         </link>
         <updated>2021-01-21T13:08:01.000Z</updated>
         <content type="html"><![CDATA[<div class="mermaid">
-```mermaid
 gantt
-dateformat YYYY-MM-DD
-title 近期安排
-section 常规20
-期末:done,2021-01-11,2d
-上交材料:crit,done,1d
-结业式:2021-01-15,1d
-section 统计
-第四季度统计:crit,2021-01-16,4d
-section 统计2
-2222:2021-01-25,1d
-```
+    title 近期安排
+    dateformat YYYY-MM-DD
+    section 常规20
+    期末:done,2021-01-11,2d
+    上交材料:crit,done,1d
+    结业式:2021-01-15,1d
+    section 统计
+    第四季度统计:crit,2021-01-16,4d
+    section 统计2
+    2222:2021-01-25,1d
+</div>
+<div class="mermaid">
+gantt
+    title A Gantt Diagram
+    dateFormat  YYYY-MM-DD
+    section Section
+    A task           :a1, 2014-01-01, 30d
+    Another task     :after a1  , 20d
+    section Another
+    Task in sec      :2014-01-12  , 12d
+    another task      : 24d
 </div>
 ]]></content>
     </entry>
