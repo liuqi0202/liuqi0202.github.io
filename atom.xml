@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-21T14:30:21.481Z</updated>
+    <updated>2021-01-21T15:06:28.555Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -16,19 +16,17 @@
         <link href="https://liuqi0202.github.io/post/ceshi/">
         </link>
         <updated>2021-01-21T13:08:01.000Z</updated>
-        <content type="html"><![CDATA[<p>kkkk</p>
-<div class="mermaid">
+        <content type="html"><![CDATA[<div class="mermaid">
 gantt
-    title A Gantt Diagram
+    title 慢工
     dateFormat  YYYY-MM-DD
-    section Section
-    A task           :a1, 2014-01-01, 30d
-    Another task     :after a1  , 20d
-    section Another
-    Task in sec      :2014-01-12  , 12d
-    another task      : 24d
-</div>
-]]></content>
+    section 干活
+    干活儿          :a1, 2021-01-01, 30d
+    对对对     :after a1  , 20d
+    section 多干活二
+    加班      :2021-01-22  , 12d
+    对对对      : 24d
+</div>]]></content>
     </entry>
     <entry>
         <title type="html"><![CDATA[Manjaro配置flameshot全局快捷键的方法及解决截图无法保存报错]]></title>
