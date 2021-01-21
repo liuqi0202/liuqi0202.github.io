@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-21T15:46:29.699Z</updated>
+    <updated>2021-01-21T15:48:22.144Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -16,12 +16,12 @@
         <link href="https://liuqi0202.github.io/post/jing-tai-wang-ye-zhi-chi-markdown-he-mermaid/">
         </link>
         <updated>2021-01-21T15:39:03.000Z</updated>
-        <content type="html"><![CDATA[<p>试用了一些PC版笔记类软件能很好的支持Markdown和Mermaid，但是发布到HEML网页中Mermaid就无法显示了，手机端的App也支持不好Mermaid。<br>
+        <content type="html"><![CDATA[<p>试用了一些PC版笔记类软件能很好的支持Markdown和Mermaid，但是发布到HTML网页中Mermaid就无法显示了，手机端的App也支持不好Mermaid。<br>
 我很喜欢用Mermaid写流程图、甘特图，所以搜索了一些相关文章找到了答案。<br>
 <a href="https://liuqi0202.github.io/post/ceshi/">效果</a><br>
 首先要更改网站发布模板的代码：<br>
 将以下代码复制到发布模板中</body>的后面，script的加载执行会影响点速度。<br>
-我把第一句中的src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js版本改了一下，改成了8.8.4，能很好的解释mermaid语句。用手机浏览器观看效果也很好。</p>
+我把第一句中的src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js版本改了一下，改成了8.8.4，能很好的解释Mermaid语句。用手机浏览器观看效果也很好。</p>
 <pre><code class="language-html">        &lt;script type=&quot;text/javascript&quot; src=&quot;https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js&quot;&gt;&lt;/script&gt;
         &lt;script&gt;
             var config = {
