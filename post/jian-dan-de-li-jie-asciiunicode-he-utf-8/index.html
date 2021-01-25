@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Manjaro 音频配置（耳机孔被插死，无法拔出） | DaQi-git</title>
+<title>简单的理解ASCII，Unicode和UTF-8 | DaQi-git</title>
 
 <link rel="shortcut icon" href="https://liuqi0202.github.io/favicon.ico?v=1611579597803">
 
@@ -89,70 +89,27 @@
         <div class="post-detail gt-bg-theme-color-second">
             <article class="gt-post-content">
                 <h2 class="post-title">
-                    Manjaro 音频配置（耳机孔被插死，无法拔出）
+                    简单的理解ASCII，Unicode和UTF-8
                 </h2>
                 <div class="post-info">
                     <time class="post-time gt-c-content-color-first">
-                        · 2021-01-11 ·
+                        · 2021-01-25 ·
                     </time>
-                    
-                        <a href="https://liuqi0202.github.io/tag/WMGpKYJPO/" class="post-tags">
-                            # Manjaro
-                        </a>
                     
                 </div>
                 <div class="post-content">
-                    <p>解除所有音频输出设备为“不静音”状态</p>
-<pre><code class="language-shell">[a@a-L440 ~]$ amixer sset Master unmute 
-Simple mixer control 'Master',0 
-Capabilities: pvolume pswitch pswitch-joined 
-Playback channels: Front Left - Front Right 
-Limits: Playback 0 - 65536 
-Mono: 
-Front Left: Playback 65536 [100%] [on] 
-Front Right: Playback 65536 [100%] [on] 
-</code></pre>
-<p>调出alsmixer音频设备管理器，对每一路设备进行调试</p>
-<pre><code class="language-shell"> [a@a-L440 ~]$ alsamixer
-</code></pre>
-<p>master设为100</p>
-<p>headphone设为MM 禁用</p>
-<p>speaker设为100</p>
-<p>PCM 设为100</p>
-<p>MIC设为MM</p>
-<p>Auto-Mute Modes设为MM</p>
-<p>用命令：</p>
-<pre><code class="language-shell">[a@a-L440 ~]$ alsamixer auto-mute disabled
-</code></pre>
-<p>但是重启系统后<code>alsamixer</code> 声音设置好后，重启又重新变为启动自动静音，用root执行，以后就默认取消自动静音了</p>
-<pre><code class="language-shell">[a@a-L440 ~]$ sudo alsactl store
-</code></pre>
-<p>参考资料：</p>
-<p>https://superuser.com/questions/431079/how-to-disable-auto-mute-mode</p>
-<p>在执行sudo alsactl store 这命令以后,如果正常关机就可以保存alsamixer的音量,但是如果等执行了那条命令以后立即断电以后就保存不了,后来我测试了下,总结了这两个规律,一个是要等执行那条命令以后再等48秒然后断电就可以保存了,二个就是用vim /var/lib/alsa/asound.state到这个文件里面,然后不做任何修改直接wq保存,然后立即断电启动以后也可以保存.问下大家这个问题怎么解决,之前好象只要一执行保存命令就可以马上保存了.如果不按上面那两条规律做的话,有可能出现asound.state这文件在断电启动以后被删除,然后alsamixer里面master 和pcm的音量都为81.有可能出现文件是空的.然后alsamixer里面master=55 和pcm=74.<br>
-<img src="https://liuqi0202.github.io/post-images/1610363230104.jpg" alt="" loading="lazy"></p>
-<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610363326100.jpg" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="2"><img src="https://liuqi0202.github.io/post-images/1610363359073.jpg" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="3"><img src="https://liuqi0202.github.io/post-images/1610363366869.jpg" alt="" loading="lazy"></figure>
-<figure data-type="image" tabindex="4"><img src="https://liuqi0202.github.io/post-images/1610363380725.jpg" alt="" loading="lazy"></figure>
-<h3 id="结论这时候扬声器已经能够出声音了但是内置的麦克依然不能用">结论：这时候扬声器已经能够出声音了，但是内置的麦克依然不能用。</h3>
-<p>期间也尝试了一些命令来解决问题</p>
-<p>查看音频设备</p>
-<pre><code class="language-shell"> [a@a-L440 ~]$ aplay -l
-</code></pre>
-<p>测试音频</p>
-<pre><code class="language-shell"> [a@a-L440 ~]$ speaker-test
-</code></pre>
-<p>音频选项</p>
-<pre><code class="language-sh"> [a@a-L440 ~]$ alsamixer
-</code></pre>
-<p>结束启动服务</p>
-<pre><code class="language-shell">[a@a-L440 ~]$ pulseaudio -k
-[a@a-L440 ~]$ pulseaudio --start
-</code></pre>
-<p>参考资料：</p>
-<p>https://wiki.archlinux.org/index.php/Advanced_Linux_Sound_Architecture_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)</p>
-<p>http://www.manongjc.com/article/59408.html</p>
+                    <p>看了这篇文章讲的很好，他参考了不少资料，浅显的解释了ANSI编码。总之，慎用Windos的记事本，换个专业点的文本编辑器就好。<br>
+<a href="https://blog.csdn.net/imxiangzi/article/details/77370160">ANSI是什么编码？</a><br>
+以下人家参考过的：<br>
+我只是看了部分。<br>
+<a href="https://www.zhihu.com/question/20650946">知乎：Windows 记事本的 ANSI、Unicode、UTF-8 这三种编码模式有什么区别？</a><br>
+<a href="http://www.qqxiuzi.cn/zh/hanzi-gbk-bianma.php">GBK编码</a><br>
+<a href="http://www.knowsky.com/resource/gb2312tbl.htm">GB2312简体中文编码表</a><br>
+<a href="http://www.chi2ko.com/jingyan/euckr2uni.htm">韩国euc-kr码（即Wansung码）与Unicode码及原字形对照表</a><br>
+<a href="https://en.wikipedia.org/wiki/Code_page_1386">维基百科：Code page 1386</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd317756%28v=vs.85%29.aspx">MSDN：Code Page Identifiers</a><br>
+<a href="http://vb2005xu.iteye.com/blog/258633">python CGI模块获取中文编码问题解决- 部分方案</a><br>
+<a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">阮一峰：字符编码笔记：ASCII，Unicode和UTF-8</a></p>
 
                 </div>
             </article>
@@ -161,8 +118,8 @@ Front Right: Playback 65536 [100%] [on]
         
             <div class="next-post">
                 <div class="next gt-c-content-color-first">下一篇</div>
-                <a href="https://liuqi0202.github.io/post/manjaro-xiu-gai-zhong-wen-mu-lu-wei-ying-wen-mu-lu/" class="post-title gt-a-link">
-                    Manjaro修改中文目录为英文目录
+                <a href="https://liuqi0202.github.io/post/fan-yi-100-ye-yi-shang-de-pdf/" class="post-title gt-a-link">
+                    翻译100页以上的PDF
                 </a>
             </div>
         

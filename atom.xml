@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-23T17:45:25.481Z</updated>
+    <updated>2021-01-25T13:00:01.148Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -10,6 +10,26 @@
     <logo>https://liuqi0202.github.io/images/avatar.png</logo>
     <icon>https://liuqi0202.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, DaQi-git</rights>
+    <entry>
+        <title type="html"><![CDATA[简单的理解ASCII，Unicode和UTF-8]]></title>
+        <id>https://liuqi0202.github.io/post/jian-dan-de-li-jie-asciiunicode-he-utf-8/</id>
+        <link href="https://liuqi0202.github.io/post/jian-dan-de-li-jie-asciiunicode-he-utf-8/">
+        </link>
+        <updated>2021-01-25T12:44:07.000Z</updated>
+        <content type="html"><![CDATA[<p>看了这篇文章讲的很好，他参考了不少资料，浅显的解释了ANSI编码。总之，慎用Windos的记事本，换个专业点的文本编辑器就好。<br>
+<a href="https://blog.csdn.net/imxiangzi/article/details/77370160">ANSI是什么编码？</a><br>
+以下人家参考过的：<br>
+我只是看了部分。<br>
+<a href="https://www.zhihu.com/question/20650946">知乎：Windows 记事本的 ANSI、Unicode、UTF-8 这三种编码模式有什么区别？</a><br>
+<a href="http://www.qqxiuzi.cn/zh/hanzi-gbk-bianma.php">GBK编码</a><br>
+<a href="http://www.knowsky.com/resource/gb2312tbl.htm">GB2312简体中文编码表</a><br>
+<a href="http://www.chi2ko.com/jingyan/euckr2uni.htm">韩国euc-kr码（即Wansung码）与Unicode码及原字形对照表</a><br>
+<a href="https://en.wikipedia.org/wiki/Code_page_1386">维基百科：Code page 1386</a><br>
+<a href="https://msdn.microsoft.com/en-us/library/windows/desktop/dd317756%28v=vs.85%29.aspx">MSDN：Code Page Identifiers</a><br>
+<a href="http://vb2005xu.iteye.com/blog/258633">python CGI模块获取中文编码问题解决- 部分方案</a><br>
+<a href="http://www.ruanyifeng.com/blog/2007/10/ascii_unicode_and_utf-8.html">阮一峰：字符编码笔记：ASCII，Unicode和UTF-8</a></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[翻译100页以上的PDF]]></title>
         <id>https://liuqi0202.github.io/post/fan-yi-100-ye-yi-shang-de-pdf/</id>
@@ -19,7 +39,7 @@
         <content type="html"><![CDATA[<p>偶然想看看Manjaro的官方文档，尽管知道是英文的，但是有翻译软件、在线翻译什么的感觉不会有困难，结果发现PDF文件即便在线查看也不提供翻译服务。于是去看看有没有比较简单的翻译PDF的服务，搜搜看看的都需要花钱。免费的一般都限制页数或文件大小。</p>
 <h2 id="先说结论推荐百度翻译和ms-office的翻译">先说结论：推荐百度翻译和Ms office的翻译</h2>
 <h3 id="1-用google翻译不推荐">1、用google翻译（不推荐）</h3>
-<p>里面有个[文件翻译]: https://translate.google.cn/?sl=auto&amp;tl=zh-CN&amp;op=docs	太好了，而且不用梯子就能上传，还很快，但是下载需要梯子😂</p>
+<p>里面有个<a href="https://translate.google.cn/?sl=auto&amp;tl=zh-CN&amp;op=docs">文件翻译</a>太好了，而且不用梯子就能上传，还很快，但是下载需要梯子😂</p>
 <p><img src="https://liuqi0202.github.io/post-images/1611417832958.png" alt="" loading="lazy"><br>
 <img src="https://liuqi0202.github.io/post-images/1611417844928.png" alt="" loading="lazy"><br>
 然后挂梯子一看翻译成了HTML，另存为下载了，发现图都没有了，而且质量真不行啊！<br>
@@ -30,7 +50,7 @@
 <h3 id="3-doctranslator">3、doctranslator</h3>
 <p>大的PDF需要切割PDF，满足网站的要求，然后在拼接，能保持原图原位置。<br>
 我是懒得切割然后一个个上传等待下载，最后再一个个拼接。<br>
-[doctranslator]: https://www.onlinedoctranslator.com/zh-CN/translationform<br>
+<a href="https://www.onlinedoctranslator.com/zh-CN/translationform">doctranslator</a><br>
 无需登陆注册什么的，应该还行吧。</p>
 <h3 id="4-用ms-office的word推荐选择">4、用Ms office的WORD（推荐选择）</h3>
 <p>先用word打开pdf，然后另存为word文件docx，在审阅里直接选翻译-翻译文档-语言选择什么的直接默认，点翻译等会儿会生成一个新的中文docx文件，保存即可。整体还是很快的，比前两种都方便快捷。我觉着翻译的质量比google那个强，排版也很棒！<br>
