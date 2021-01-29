@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-25T13:11:46.919Z</updated>
+    <updated>2021-01-29T05:02:21.967Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -121,7 +121,7 @@ gantt
     系统开放:2021-01-08,2021-01-21
     递交材料:2021-01-08,2021-01-22
     section 整理统计
-    等待消息 : 2021-01-16,2021-01-22
+    等待消息 : 2021-01-16,2021-02-03
     四季度统计:crit,2021-01-21,4d
     </div>]]></content>
     </entry>
