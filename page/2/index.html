@@ -4,7 +4,7 @@
 <meta name="description" content=""/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-<title>Hello Gridea | DaQi-git</title>
+<title>DaQi-git</title>
 
 <link rel="shortcut icon" href="https://liuqi0202.github.io/favicon.ico?v=1619621390692">
 
@@ -25,11 +25,11 @@
 
 
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.css">
 </head>
 <body>
 <div class="main gt-bg-theme-color-first">
-    <nav class="navbar navbar-expand-lg">
+    <div class="main-content">
+        <nav class="navbar navbar-expand-lg">
     <div class="navbar-brand">
         <img class="user-avatar" src="/images/avatar.png" alt="头像">
         <div class="site-name gt-c-content-color-first">
@@ -85,52 +85,41 @@
     </div>
 </nav>
 
-    <div class="post-container">
-        <div class="post-detail gt-bg-theme-color-second">
-            <article class="gt-post-content">
-                <h2 class="post-title">
-                    Hello Gridea
-                </h2>
-                <div class="post-info">
-                    <time class="post-time gt-c-content-color-first">
-                        · 2018-12-12 ·
-                    </time>
-                    
+
+        <div class="post-list-container">
+    <div class="post-inner">
+        
+            <div class="post gt-bg-theme-color-second">
+                <div class="post-left">
+                    <div>
+                        
+                        <a href="https://liuqi0202.github.io/post/ce-shi/">
+                            <span class="post-title gt-c-content-color-first">测试</span>
+                        </a>
+                    </div>
+                    <div class="gt-post-content post-abstract gt-c-content-color-second">
+                        
+                    </div>
+                    <div class="post-info">
+                        <time class="post-time gt-c-content-color-first">
+                            发布于 · 2021-01-10 ·
+                        </time>
+                        
+                    </div>
                 </div>
-                <div class="post-content">
-                    <p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="https://gridea.dev/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>Windows</strong>，<strong>MacOS</strong> 或 <strong>Linux</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前 🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
-
-                </div>
-            </article>
-        </div>
-
+                
+            </div>
         
+    </div>
+</div>
 
-        
+        <div class="pagination-container">
+    
+        <a href="https://liuqi0202.github.io/" class="prev-page gt-a-link">上一页</a>
+    
+    
+</div>
 
-        
-
-        
 
         <div class="site-footer gt-c-content-color-first">
     <div class="slogan gt-c-content-color-first">I may be slow.</div>
@@ -165,33 +154,4 @@
     </div>
 </div>
 </body>
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mermaid/8.8.4/mermaid.min.js"></script>
-        <script>
-            var config = {
-                startOnLoad:true,
-                flowchart:{
-                    useMaxWidth:false,
-                    htmlLabels:true
-                }
-            };
-            mermaid.initialize(config);
-            $(function(){
-                var elements = document.getElementsByClassName("language-mermaid");
-                for (var i = elements.length; i--;) {
-                    element = elements[i];
-                    var graphDefinition = element.innerText;
-                    if (graphDefinition) {
-                        var svg = mermaid.render('ha_mermaid_' + i, graphDefinition, function(svg){});
-                        if (svg) {
-                            var svgElement = document.createElement('div');
-                            preNode = element.parentNode;
-                            svgElement.innerHTML = svg;
-                            svgElement.setAttribute('class', 'mermaid');
-                            svgElement.setAttribute('data-processed', 'true');
-                            preNode.parentNode.replaceChild(svgElement, preNode);
-                        }
-                    }
-                }
-            });
-        </script>
 </html>

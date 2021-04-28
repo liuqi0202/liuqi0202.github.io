@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://liuqi0202.github.io</id>
     <title>DaQi-git</title>
-    <updated>2021-01-29T05:02:21.967Z</updated>
+    <updated>2021-04-28T14:49:52.931Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://liuqi0202.github.io"/>
     <link rel="self" href="https://liuqi0202.github.io/atom.xml"/>
@@ -10,6 +10,16 @@
     <logo>https://liuqi0202.github.io/images/avatar.png</logo>
     <icon>https://liuqi0202.github.io/favicon.ico</icon>
     <rights>All rights reserved 2021, DaQi-git</rights>
+    <entry>
+        <title type="html"><![CDATA[Realtek音响耳机同时播放音频设置]]></title>
+        <id>https://liuqi0202.github.io/post/realtek-yin-xiang-er-ji-tong-shi-bo-fang-yin-pin-she-zhi/</id>
+        <link href="https://liuqi0202.github.io/post/realtek-yin-xiang-er-ji-tong-shi-bo-fang-yin-pin-she-zhi/">
+        </link>
+        <updated>2021-04-28T14:46:17.000Z</updated>
+        <content type="html"><![CDATA[<p>平时不开音箱，用耳机；偶尔开音箱，也不禁用或者拔掉耳机。<br>
+如图<img src="https://liuqi0202.github.io/post-images/1619621230194.png" alt="" loading="lazy"></p>
+]]></content>
+    </entry>
     <entry>
         <title type="html"><![CDATA[简单的理解ASCII，Unicode和UTF-8]]></title>
         <id>https://liuqi0202.github.io/post/jian-dan-de-li-jie-asciiunicode-he-utf-8/</id>
@@ -303,16 +313,6 @@ chmod 755 /usr/share/fonts/WindowsFonts/*
 <p>然后重新生成字体缓存：</p>
 <pre><code class="language-shell">fc-cache -f 
 </code></pre>
-]]></content>
-    </entry>
-    <entry>
-        <title type="html"><![CDATA[测试]]></title>
-        <id>https://liuqi0202.github.io/post/ce-shi/</id>
-        <link href="https://liuqi0202.github.io/post/ce-shi/">
-        </link>
-        <updated>2021-01-10T08:13:52.000Z</updated>
-        <content type="html"><![CDATA[<p>这是一个小测试</p>
-<figure data-type="image" tabindex="1"><img src="https://liuqi0202.github.io/post-images/1610268845176.png" alt="" loading="lazy"></figure>
 ]]></content>
     </entry>
 </feed>
